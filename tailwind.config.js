@@ -44,9 +44,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
-        sans: ['Lato', 'sans-serif'],
-        elegant: ['"Great Vibes"', 'cursive'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['Marcellus', 'serif'],
+        elegant: ['Tangerine', 'cursive'],
+        manville: ['Manville', 'serif'],
       },
       keyframes: {
         'fade-in-up': {

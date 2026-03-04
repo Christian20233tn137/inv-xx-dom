@@ -1,7 +1,9 @@
 export const invitationData = {
   name: "Dominik",
-  date: "2026-10-10",
+  date: "2026-04-11",
   place: "Salón Chris",
   dressCode: "Formal Elegante",
-  song: "/assets/audio/song.mp3",
+  song: "/song.mp3",
 };
+
+
