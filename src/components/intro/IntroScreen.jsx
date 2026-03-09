@@ -12,7 +12,7 @@ export default function IntroScreen({ onOpen }) {
 
       {/* Name */}
       <h1 className="text-6xl md:text-8xl mb-12 font-elegant text-primary-900 z-10 animate-fade-in-up drop-shadow-sm">
-        Dominique Escobar Días
+        Dominique Escobar Díaz
       </h1>
 
       {/* Elegant Invitation Card */}
