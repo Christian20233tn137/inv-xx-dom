@@ -1,4 +1,3 @@
-
 import Hero from "../components/invitation/Hero";
 import MusicSection from "../components/invitation/MusicSection";
 import DetailsCard from "../components/invitation/DetailsCard";
@@ -11,40 +10,52 @@ import PhotoSection from "../components/invitation/PhotoSection";
 export default function InvitationContent() {
   return (
     <div className="w-full bg-quartz-50 min-h-screen relative z-0 overflow-hidden">
-        <Hero />
+      {/* Music section – between Hero and first PhotoSection */}
+      <MusicSection />
+      <Hero />
 
-        {/* Music section – between Hero and first PhotoSection */}
-        <MusicSection />
+      {/* Photo gallery – mosaic layout after hero */}
+      <PhotoSection
+        title="Dominique"
+        subtitle="Un sueño que siempre brilló"
+        variant="mosaic"
+        photos={[
+          { src: "/Foto_03.webp", alt: "Dominique foto 1" },
+          { src: "/Foto_05.webp", alt: "Dominique foto 2", fit: "contain" },
+          { src: "/Foto_10.webp", alt: "Dominique foto 3" },
+        ]}
+      />
 
-        {/* Photo gallery – mosaic layout after hero */}
-        <PhotoSection
-          title="Dominik"
-          subtitle="Un sueño que siempre brilló"
-          variant="mosaic"
-          photos={[
-            { src: "/assets/images/photo-1.jpg", alt: "Dominik foto 1" },
-            { src: "/assets/images/photo-2.jpg", alt: "Dominik foto 2" },
-            { src: "/assets/images/photo-3.jpg", alt: "Dominik foto 3" },
-          ]}
-        />
+      <DetailsCard />
+      <LocationSection />
 
-        <DetailsCard />
-        <LocationSection />
+      {/* Photo section – polaroid style before dress code */}
+      <PhotoSection
+        variant="polaroid"
+        bg="bg-primary-50/30"
+        photos={[
+          {
+            src: "/Foto_06.webp",
+            alt: "Dominique foto 4",
+            caption: "Preparándose",
+            fit: "contain",
+          },
+          {
+            src: "/Foto_07.webp",
+            alt: "Dominique foto 5",
+            caption: "La espera",
+          },
+          {
+            src: "/Foto_04.webp",
+            alt: "Dominique foto 6",
+            caption: "El gran día",
+          },
+        ]}
+      />
 
-        {/* Photo section – polaroid style before dress code */}
-        <PhotoSection
-          variant="polaroid"
-          bg="bg-primary-50/30"
-          photos={[
-            { src: "/assets/images/photo-4.jpg", alt: "Dominik foto 4", caption: "Preparándose" },
-            { src: "/assets/images/photo-5.jpg", alt: "Dominik foto 5", caption: "La espera" },
-            { src: "/assets/images/photo-6.jpg", alt: "Dominik foto 6", caption: "El gran día" },
-          ]}
-        />
-
-        <DressCodeSection />
-        <CountdownSection />
-        <RSVPSection />
+      <DressCodeSection />
+      <CountdownSection />
+      <RSVPSection />
     </div>
   );
 }

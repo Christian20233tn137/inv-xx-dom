@@ -1,82 +1,61 @@
-import { MapPin, ExternalLink, Landmark } from "lucide-react";
-import { invitationData } from "../../data/invitationData";
+import { MapPin, Map } from "lucide-react";
 
 export default function LocationSection() {
   return (
-    <section className="py-16 px-4 bg-quartz-50 relative overflow-hidden">
+    <section className="py-32 px-4 relative flex items-center justify-center min-h-[60vh] bg-primary-950 overflow-hidden">
+      {/* ── Marco arquitectónico interior (Más sutil y oscuro) ── */}
+      <div className="absolute inset-4 md:inset-8 border-[1px] border-primary-900 pointer-events-none"></div>
 
-      {/* Background accent */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-24 -left-24 w-72 h-72 bg-primary-100 rounded-full opacity-40 blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-secondary-100 rounded-full opacity-30 blur-3xl" />
-      </div>
+      {/* ── Decoración de esquinas con un verde olivo muy suave (primary-200) ── */}
+      <div className="absolute top-8 left-8 w-4 h-4 border-t-[1px] border-l-[1px] border-primary-200/40"></div>
+      <div className="absolute top-8 right-8 w-4 h-4 border-t-[1px] border-r-[1px] border-primary-200/40"></div>
+      <div className="absolute bottom-8 left-8 w-4 h-4 border-b-[1px] border-l-[1px] border-primary-200/40"></div>
+      <div className="absolute bottom-8 right-8 w-4 h-4 border-b-[1px] border-r-[1px] border-primary-200/40"></div>
 
-      <div className="max-w-4xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+      <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center animate-fade-in-up">
+        {/* Ícono solitario en tono salvia/pistacho suave */}
+        <MapPin
+          className="text-primary-200/80 mb-8 animate-pulse-slow"
+          size={36}
+          strokeWidth={1}
+        />
 
-        {/* ── Stacked cards (top on mobile, left on desktop) ── */}
-        <div className="w-full flex justify-center md:flex-1 order-1 md:order-none">
-          {/* Outer wrapper keeps a stable height so cards don't spill */}
-          <div className="relative w-60 h-72 sm:w-64 sm:h-80">
+        {/* Subtítulo en cursiva con un tono almendra/olivo claro */}
+        <span className="font-elegant text-5xl md:text-6xl text-primary-100 mb-4 block">
+          Ubicación
+        </span>
 
-            {/* Card 3 – bottom */}
-            <div className="absolute inset-0 bg-primary-200 rounded-xl shadow-md
-                            transform rotate-6 translate-x-3 translate-y-3
-                            border-4 border-white overflow-hidden" />
+        {/* Título Principal en Blanco Cuarzo para máximo contraste y limpieza */}
+        <h3 className="text-2xl md:text-4xl font-serif text-quartz-50 uppercase tracking-[0.2em] mb-8">
+          Recepción del Evento
+        </h3>
 
-            {/* Card 2 – middle */}
-            <div className="absolute inset-0 bg-secondary-200 rounded-xl shadow-md
-                            transform -rotate-3 translate-x-1 translate-y-1
-                            border-4 border-white overflow-hidden" />
+        {/* Separador oscurecido para no llamar tanto la atención */}
+        <div className="w-16 h-[1px] bg-primary-800 mx-auto mb-8"></div>
 
-            {/* Card 1 – top / visible */}
-            <div className="absolute inset-0 bg-primary-50 rounded-xl shadow-2xl
-                            transform rotate-1 hover:rotate-0 transition-transform duration-500
-                            border-4 border-white overflow-hidden z-10
-                            flex flex-col items-center justify-center gap-3">
-              <Landmark
-                className="text-primary-400"
-                size={56}
-                strokeWidth={1.2}
-              />
-              <span className="text-primary-600 font-serif text-sm tracking-widest uppercase opacity-70 text-center px-4">
-                {invitationData.place}
-              </span>
-            </div>
+        {/* Detalles del lugar con colores muy tenues */}
+        <p className="text-quartz-50/90 font-sans text-sm md:text-base font-light mb-2 tracking-wide max-w-md mx-auto">
+          Esperamos tu presencia
+        </p>
+        <p className="text-primary-100/60 font-serif italic text-sm md:text-base mb-12 max-w-sm mx-auto leading-relaxed">
+          "Un lugar mágico para una noche inolvidable. Te esperamos para
+          celebrar juntos."
+        </p>
 
-          </div>
-        </div>
-
-        {/* ── Text Details ── */}
-        <div className="flex-1 text-center md:text-left order-2 md:order-none w-full">
-
-          {/* Icon + heading row */}
-          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-            <MapPin className="text-primary-500 shrink-0" size={24} strokeWidth={1.8} />
-            <h3 className="text-3xl sm:text-4xl font-elegant text-primary-800 leading-tight">
-              Ubicación
-            </h3>
-          </div>
-
-          <p className="text-lg sm:text-xl text-primary-500 mb-1 font-serif">
-            {invitationData.place}
-          </p>
-          <p className="text-primary-600 mb-8 italic font-serif text-sm sm:text-base">
-            Un lugar mágico para una noche inolvidable
-          </p>
-
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-7 py-3
-                       bg-primary-600 text-quartz-50 rounded-full
-                       hover:bg-primary-700 active:scale-95
-                       transition-all duration-200 shadow-lg
-                       uppercase tracking-wider text-sm font-medium"
-          >
-            <ExternalLink size={16} strokeWidth={2} />
-            Ver en Mapa
-          </a>
-        </div>
-
+        {/* Botón Premium: Bordes suaves que se rellenan con un tono pastel elegante */}
+        <a
+          href="https://maps.app.goo.gl/TFafHE8oLPf6M6ta6?g_st=ic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-3 px-10 py-5 border border-primary-200/60 text-primary-100 hover:bg-primary-100 hover:text-primary-950 transition-all duration-500 font-sans text-xs md:text-sm uppercase tracking-[0.25em]"
+        >
+          <Map
+            size={18}
+            strokeWidth={1.5}
+            className="group-hover:scale-110 transition-transform duration-500"
+          />
+          <span>Abrir en el mapa</span>
+        </a>
       </div>
     </section>
   );

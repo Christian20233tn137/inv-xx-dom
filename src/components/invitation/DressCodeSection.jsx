@@ -1,50 +1,67 @@
-
+import { Sparkles } from "lucide-react";
 import { invitationData } from "../../data/invitationData";
 
-// Color palette for the dress code – adjust hex values to match the event's palette
+// Nueva paleta de colores suaves y románticos
 const colorPalette = [
-  { name: "Verde Olivo",  hex: "#5C7326" },
-  { name: "Dorado",       hex: "#C5A55A" },
-  { name: "Champán",      hex: "#F5E6CC" },
-  { name: "Bronce",       hex: "#8B6F47" },
+  { name: "Almendra", hex: "#EAE0D5" },
+  { name: "Rosa Polvo", hex: "#DBC1C1" },
+  { name: "Pistacho", hex: "#C2CAB0" }, // Coincide con tu primary-50
+  { name: "Café Latte", hex: "#BFA58E" },
 ];
 
 export default function DressCodeSection() {
   return (
-    <section className="py-20 px-4 bg-primary-800 text-quartz-50 text-center relative">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-400 to-transparent opacity-50"></div>
-        
-        <h3 className="text-3xl font-serif mb-4 tracking-widest text-primary-200 font-light">
-          DRESS CODE
-        </h3>
-        
-        <div className="flex flex-col items-center justify-center gap-6">
-            <h4 className="text-2xl font-light font-elegant text-primary-300 text-4xl">
-                {invitationData.dressCode}
-            </h4>
+    <section className="py-24 px-4 bg-white text-center relative flex flex-col items-center justify-center">
+      {/* Divisor superior sutil */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-md h-[1px] "></div>
 
-            {/* Color Palette Swatches */}
-            <div className="flex items-center justify-center gap-4 mt-4">
-              {colorPalette.map((color) => (
-                <div key={color.name} className="flex flex-col items-center gap-2">
-                  <div
-                    className="color-swatch"
-                    style={{ backgroundColor: color.hex }}
-                    title={color.name}
-                  ></div>
-                  <span className="text-[10px] uppercase tracking-widest text-primary-300 opacity-70">
-                    {color.name}
-                  </span>
-                </div>
-              ))}
+      <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center animate-fade-in-up">
+        {/* Ícono decorativo */}
+        <Sparkles
+          strokeWidth={1}
+          size={32}
+          className="text-primary-400 mb-6 animate-pulse-slow"
+        />
+
+        {/* Subtítulo en cursiva para suavizar */}
+        <span className="font-elegant text-5xl md:text-6xl text-primary-600 mb-2 block">
+          Código de Vestimenta
+        </span>
+
+        {/* Título formal usando los datos de tu invitación */}
+        <h3 className="text-2xl md:text-3xl font-serif mb-10 tracking-[0.2em] text-primary-950 uppercase">
+          {invitationData.dressCode || "Formal"}
+        </h3>
+
+        {/* Paleta de Colores Inspiracional */}
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-12">
+          {colorPalette.map((color) => (
+            <div
+              key={color.name}
+              className="flex flex-col items-center gap-3 group"
+            >
+              <div
+                className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-sm border-[1px] border-primary-100/50 transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundColor: color.hex }}
+                title={color.name}
+              ></div>
+              <span className="text-[10px] md:text-xs font-sans uppercase tracking-[0.15em] text-primary-800/70">
+                {color.name}
+              </span>
             </div>
-            
-            <p className="max-w-md mx-auto text-primary-200 font-light opacity-80 mt-4 font-serif italic">
-                Rogamos asistir con vestimenta formal.
-                <br />
-                Nos reservamos el derecho de admisión.
-            </p>
+          ))}
         </div>
+
+        {/* Notas finales elegantes */}
+        <div className="relative mt-4">
+          <p className="max-w-md mx-auto text-primary-800 font-sans font-light text-sm md:text-base leading-relaxed">
+            Recomendamos asistir con vestimenta formal en las tonalidades sugeridas.
+          </p>
+          <p className="max-w-md mx-auto text-primary-600/60 font-serif italic text-xs mt-4">
+            Nos reservamos el derecho de admisión.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

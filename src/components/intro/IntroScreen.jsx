@@ -2,84 +2,102 @@ import { ChevronRight, Mail } from "lucide-react";
 
 export default function IntroScreen({ onOpen }) {
   return (
-    <div className="min-h-screen bg-primary-100 flex flex-col items-center justify-center relative overflow-hidden">
-
+    <div
+      className="min-h-screen bg-primary-100 flex flex-col items-center justify-center relative overflow-hidden"
+      style={{ backgroundImage: "url('/fondoConteo.webp')" }}
+    >
       {/* Decorative Background Blobs */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-primary-200 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-secondary-200 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80  rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       {/* Name */}
-      <h1 className="text-6xl md:text-8xl mb-10 font-elegant text-primary-900 z-10 animate-fade-in-up drop-shadow-sm">
-        Dominik
+      <h1 className="text-6xl md:text-8xl mb-12 font-elegant text-primary-900 z-10 animate-fade-in-up drop-shadow-sm">
+        Dominique Escobar Días
       </h1>
 
-      {/* Envelope Card + CTA */}
+      {/* Elegant Invitation Card */}
       <div className="z-10 flex flex-col items-center gap-8">
-
-        {/* Clickable envelope card */}
+        {/* Clickable invitation card */}
         <button
           onClick={onOpen}
           aria-label="Abrir invitación"
           className="group cursor-pointer focus:outline-none"
         >
-          <div className="relative transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-1">
+          <div className="relative hover:scale-105 transition-transform duration-300 ease-out">
+            {/* Main invitation image */}
+            <img
+              src="/CARTAFINAL.webp"
+              alt="Invitación de boda elegante"
+              className="w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] 
+                         h-auto object-contain
+                         drop-shadow-2xl 
+                         animate-float
+                         transition-all duration-500 ease-out
+                         group-hover:scale-105 
+                         group-hover:drop-shadow-3xl
+                         group-focus:scale-105"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                e.currentTarget.nextElementSibling.style.display = "flex";
+              }}
+            />
 
-            {/* Card frame */}
+            {/* Elegant fallback for when image fails to load */}
             <div
-              className="w-72 h-52 sm:w-80 sm:h-56 bg-[#fdfbf7] border-4 border-primary-300 shadow-2xl rotate-3
-                         flex flex-col items-center justify-center gap-3 relative overflow-hidden rounded-sm"
+              className="hidden w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] h-96
+                           bg-gradient-to-b from-white to-primary-50 
+                           border border-primary-200 rounded-lg shadow-2xl
+                           flex-col items-center justify-center gap-4"
             >
-              {/* Inner border decoration */}
-              <div className="absolute inset-2 border border-primary-200 pointer-events-none" />
-
-              {/* Carta image or fallback icon */}
-              <div className="relative w-full h-full flex items-center justify-center">
-                <img
-                  src="/carta.jpg"
-                  alt="Carta de invitación"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                    e.currentTarget.nextElementSibling.style.display = "flex";
-                  }}
-                />
-                {/* Fallback visible only when image fails */}
-                <div
-                  className="hidden absolute inset-0 flex-col items-center justify-center gap-2 bg-[#fdfbf7]"
-                >
-                  <Mail
-                    className="text-primary-400"
-                    size={56}
-                    strokeWidth={1.2}
-                  />
-                  <span className="text-primary-600 font-serif text-sm tracking-widest uppercase opacity-70">
-                    Invitación
-                  </span>
-                </div>
-              </div>
-
-              {/* Wax seal badge */}
-              <span className="absolute -bottom-3 -right-3 w-10 h-10 rounded-full bg-primary-600 text-quartz-50 flex items-center justify-center shadow-lg border-2 border-primary-300">
-                <Mail size={16} strokeWidth={1.8} />
+              <Mail className="text-primary-400" size={64} strokeWidth={1} />
+              <span className="text-primary-600 font-serif text-lg tracking-[0.15em] uppercase opacity-80">
+                Invitación Elegante
               </span>
             </div>
 
-            {/* Arrow hint */}
-            <div className="absolute -right-10 top-1/2 -translate-y-1/2 flex items-center animate-bounce">
+            {/* Subtle arrow hint */}
+            <div
+              className="absolute -right-8 top-1/2 -translate-y-1/2 flex items-center 
+                           animate-pulse opacity-60 group-hover:opacity-80 transition-opacity"
+            >
               <ChevronRight
-                className="text-primary-700 drop-shadow"
-                size={36}
-                strokeWidth={2}
+                className="text-primary-500 drop-shadow-sm"
+                size={28}
+                strokeWidth={1.5}
               />
             </div>
           </div>
         </button>
 
-        {/* CTA text */}
-        <p className="text-center text-primary-800 text-lg sm:text-xl font-light tracking-[0.25em] animate-pulse uppercase">
+        {/* Elegant CTA text */}
+        <p
+          className="text-center text-primary-700 text-base sm:text-lg font-light 
+                      tracking-[0.3em] uppercase opacity-80 animate-pulse"
+        >
           Toca para abrir
         </p>
       </div>
+
+      {/* Custom floating animation styles */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+
+        .drop-shadow-3xl {
+          filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+        }
+      `}</style>
     </div>
   );
 }
