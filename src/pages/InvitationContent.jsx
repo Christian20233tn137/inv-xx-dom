@@ -37,18 +37,15 @@ export default function InvitationContent() {
           {
             src: "/Foto_06.webp",
             alt: "Dominique foto 4",
-            caption: "Preparándose",
             fit: "contain",
           },
           {
             src: "/Foto_05.webp",
             alt: "Dominique foto 5",
-            caption: "La espera",
           },
           {
             src: "/Foto_04.webp",
             alt: "Dominique foto 6",
-            caption: "El gran día",
           },
         ]}
       />

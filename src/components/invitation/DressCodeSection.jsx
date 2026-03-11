@@ -3,37 +3,29 @@ import { invitationData } from "../../data/invitationData";
 
 // Nueva paleta de colores suaves y románticos
 const colorPalette = [
-  { name: "Almendra", hex: "#EAE0D5" },
-  { name: "Rosa Polvo", hex: "#DBC1C1" },
-  { name: "Pistacho", hex: "#C2CAB0" }, // Coincide con tu primary-50
-  { name: "Café Latte", hex: "#BFA58E" },
+  { name: "Rosa Pastel", hex: "#F6CBCE" },
+  { name: "Amarillo Pastel", hex: "#FDE2A7" },
+  { name: "Durazno", hex: "#F6BAA1" },
+  { name: "Verde Salvia", hex: "#ABC4B9" },
+  { name: "Verde Pistacho", hex: "#CDE0C0" },
 ];
 
 export default function DressCodeSection() {
   return (
     <section className="py-24 px-4 bg-white text-center relative flex flex-col items-center justify-center">
-      {/* Divisor superior sutil */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-md h-[1px] "></div>
-
       <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center animate-fade-in-up">
-        {/* Ícono decorativo */}
         <Sparkles
           strokeWidth={1}
           size={32}
           className="text-primary-400 mb-6 animate-pulse-slow"
         />
-
-        {/* Subtítulo en cursiva para suavizar */}
         <span className="font-elegant text-5xl md:text-6xl text-primary-600 mb-2 block">
           Código de Vestimenta
         </span>
-
-        {/* Título formal usando los datos de tu invitación */}
         <h3 className="text-2xl md:text-3xl font-serif mb-10 tracking-[0.2em] text-primary-950 uppercase">
-          {invitationData.dressCode || "Formal"}
+          Formal Elegante
         </h3>
-
-        {/* Paleta de Colores Inspiracional */}
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-12">
           {colorPalette.map((color) => (
             <div
@@ -51,14 +43,13 @@ export default function DressCodeSection() {
             </div>
           ))}
         </div>
-
-        {/* Notas finales elegantes */}
         <div className="relative mt-4">
           <p className="max-w-md mx-auto text-primary-800 font-sans font-light text-sm md:text-base leading-relaxed">
-            Recomendamos asistir con vestimenta formal en las tonalidades sugeridas.
+            Se sugiere el siguiente código de vestimenta, se está abierto a
+            otros colores siempre y cuando cumplan con tonalidades pasteles
           </p>
           <p className="max-w-md mx-auto text-primary-600/60 font-serif italic text-xs mt-4">
-            Nos reservamos el derecho de admisión.
+            Te esperamos con ansias.
           </p>
         </div>
       </div>
