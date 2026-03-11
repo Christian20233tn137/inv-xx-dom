@@ -23,7 +23,7 @@ export default function Hero() {
 
         {/* Nombre Principal: Intacto, siendo el protagonista absoluto */}
         <h1 className="text-7xl md:text-8xl lg:text-9xl font-elegant text-primary-600 mb-16 drop-shadow-sm animate-fade-in-up">
-          {invitationData.name}
+          Dominique Escobar
         </h1>
 
         {/* Tarjeta de la Cita (Quote Card) - Efecto Glassmorphism Premium */}

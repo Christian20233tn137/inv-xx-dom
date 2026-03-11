@@ -20,9 +20,9 @@ export default function InvitationContent() {
         subtitle="Un sueño que siempre brilló"
         variant="mosaic"
         photos={[
-          { src: "/Foto_03.webp", alt: "Dominique foto 1" },
-          { src: "/Foto_05.webp", alt: "Dominique foto 2", fit: "contain" },
-          { src: "/Foto_10.webp", alt: "Dominique foto 3" },
+          { src: "/Foto_10.webp", alt: "Dominique foto 1", fit: "" },
+          { src: "/Foto_07.webp", alt: "Dominique foto 2", fit: "" },
+          { src: "/Foto_03.webp", alt: "Dominique foto 3", fit: "cover" },
         ]}
       />
 
@@ -41,7 +41,7 @@ export default function InvitationContent() {
             fit: "contain",
           },
           {
-            src: "/Foto_07.webp",
+            src: "/Foto_05.webp",
             alt: "Dominique foto 5",
             caption: "La espera",
           },

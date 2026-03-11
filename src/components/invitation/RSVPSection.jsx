@@ -35,7 +35,7 @@ export default function RSVPSection() {
 
         {/* Botón Premium: Sólido que se vuelve transparente (Ghost) en hover */}
         <a
-          href="https://forms.google.com/tu-enlace-aqui"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd9F4F_Ju7o2GrZ1RMAUNBazIJU9zy1c1CFdY7aE_5VjQCniw/viewform?usp=publish-editor"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 px-10 py-5 bg-primary-900 text-quartz-50 font-sans text-xs md:text-sm tracking-[0.25em] uppercase border border-primary-900 transition-all duration-500 hover:bg-transparent hover:text-primary-900"

@@ -61,7 +61,7 @@ export default function DetailsCard() {
                 Hora
               </p>
               <p className="font-serif text-primary-950 text-2xl md:text-3xl mb-1 tracking-wide">
-                7:00 PM
+                4:00 PM
               </p>
               <p className="font-sans text-[10px] tracking-[0.2em] text-primary-600/55 uppercase mt-1">
                 Recepción
